@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
   s.authors = ["Weverton do Couto Timoteo"]
   s.email = "weverton@wolcan.us"
   s.homepage = "http://github.com/wolcanus/simple-captcha"
+
+  s.add_dependency("mongoid", ["~> 2.3.4"])
   
   s.files = Dir["{lib}/**/*"] + ["Rakefile", "README.rdoc"]
   s.test_files = Dir["{test}/**/*"]
