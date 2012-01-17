@@ -1,6 +1,7 @@
 =SimpleCaptcha
 
-SimpleCaptcha is the simplest and a robust captcha plugin. Its implementation requires
+This is a fork of galetahub SimpleCaptcha to support Mongoid.
+Its implementation requires
 adding up a single line in views and in controllers/models.
 SimpleCaptcha is available to be used with Rails 3 or above and also it provides the
 backward compatibility with previous versions of Rails.
