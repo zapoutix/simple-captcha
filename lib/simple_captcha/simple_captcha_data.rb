@@ -1,12 +1,13 @@
 module SimpleCaptcha
-  class SimpleCaptchaData < ::ActiveRecord::Base
-    set_table_name "simple_captcha_data"
+  class SimpleCaptchaData
+    include Mongoid::Document
     
-    attr_accessible :key, :value
+    field :key, :type => String
+    field :value, :type => String
     
     class << self
       def get_data(key)
-        data = find_by_key(key) || new(:key => key)
+        data = SimpleCaptchaData.where(:key => key).first || new(:key => key)
       end
       
       def remove_data(key)
