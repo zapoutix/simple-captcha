@@ -4,6 +4,7 @@ module SimpleCaptcha
     
     field :key, :type => String
     field :value, :type => String
+    field :created_at, :type => Time, :default -> { Time.now }
     
     class << self
       def get_data(key)
