@@ -4,7 +4,7 @@ module SimpleCaptcha
     
     field :key, :type => String
     field :value, :type => String
-    field :created_at, :type => Time, :default -> { Time.now }
+    field :created_at, :type => Time, default: -> { Time.now }
     
     class << self
       def get_data(key)
@@ -18,7 +18,7 @@ module SimpleCaptcha
       
       def clear_old_data(time = 1.hour.ago)
         return unless Time === time
-        SimpleCaptchaData.where(:updated_at.lt => time).delete_all
+        SimpleCaptchaData.where(:updated_at.lt => time.utc).delete_all
       end
     end
   end
