@@ -71,9 +71,8 @@ module SimpleCaptcha #:nodoc
         dst = RUBY_VERSION < '1.9' ? Tempfile.new('simple_captcha.bmp') : Tempfile.new(['simple_captcha', '.bmp'])
         dst.binmode
 
-        params << "label:#{text} '#{File.expand_path(dst.path)}'"
+        params << "label:#{text} \"#{File.expand_path(dst.path)}\""
         
-        puts "Convert : " + params.join(' ')
         
         SimpleCaptcha::Utils::run("convert", params.join(' '))
 
